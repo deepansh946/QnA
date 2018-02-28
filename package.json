@@ -1,0 +1,36 @@
+{
+  "name": "qna",
+  "version": "1.0.0",
+  "description": "Discussion Forum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server/index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepansh946/QnA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepansh946/QnA/issues"
+  },
+  "homepage": "https://github.com/deepansh946/QnA#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "hapi": "^17.2.0",
+    "joi": "^13.1.2",
+    "mongoose": "^5.0.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "nodemon": "^1.17.1"
+  }
+}
