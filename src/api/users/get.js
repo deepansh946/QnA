@@ -1,11 +1,11 @@
 import Joi from "joi";
 
-import { Delete } from "../../database/functions/users";
+import { get } from "../../database/functions/users";
 
 export default {
   tags: ["api", "users"],
-  description: "Delete a new user",
-  notes: "It will delete a new user",
+  description: "Display a user with the help of its id",
+  notes: "It will display a user with its id",
   validate: {
     params: Joi.object({
       userId: Joi.string().required()
@@ -15,7 +15,7 @@ export default {
     try {
       const { userId } = request.params;
 
-      const res = await Delete({ userId });
+      const res = await get({ userId });
 
       return res;
     } catch (error) {
