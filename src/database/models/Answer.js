@@ -1,20 +1,19 @@
 import mongoose from "mongoose";
 
-const schema = mongoose.schema;
+const schema = mongoose.Schema;
 
 const answerSchema = new schema({
+  answerId: String,
   text: {
     type: String,
-    required: true
+    required: true,
     unique: true
   },
   timestamp: {
     type: Date,
-    required: true
-    unique: true  
+    required: true,
+    unique: true
   }
 });
 
-const answerModel = mongoose.schema('Answer', answerSchema);
-
-export default answerModel;
+export default mongoose.model("Answer", answerSchema);

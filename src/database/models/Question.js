@@ -1,20 +1,25 @@
 import mongoose from "mongoose";
+import { Stream } from "stream";
 
-const schema = mongoose.schema;
+const schema = mongoose.Schema;
 
 const questionSchema = new schema({
+  questionId: String,
   text: {
     type: String,
-    required: true
+    required: true,
     unique: true
   },
   timestamp: {
     type: Date,
+    required: true,
+    unique: true,
+    default: Date.now
+  },
+  authorId: {
+    type: String,
     required: true
-    unique: true  
   }
 });
 
-const questionModel = mongoose.schema('Question', answerSchema);
-
-export default questionModel;
+export default mongoose.model("Question", questionSchema);
