@@ -1,11 +1,11 @@
 import Joi from "joi";
 
-import { create } from "../../database/functions/questions";
+import { create } from "../../database/functions/answers";
 
 export default {
-  tags: ["api", "questions"],
-  description: "Create a new question",
-  notes: "It will create a new question",
+  tags: ["api", "answers"],
+  description: "Create a new answer",
+  notes: "It will create a new answer",
   validate: {
     payload: Joi.object({
       text: Joi.string().required()

@@ -26,6 +26,10 @@ export async function create({ text, authorId }) {
   }
 }
 
+// create({text: "New question", authorId: "12312312"})
+//   .then(e => console.log(e))
+//   .catch(e => console.log(e));
+
 export async function get({ questionId }) {
   try {
     const query = Question.findById(questionId);
@@ -53,6 +57,10 @@ export async function get({ questionId }) {
     };
   }
 }
+
+// get({questionId: "5a99587abcacb7692b1230d4"})
+//   .then(e => console.log(e))
+//   .catch(e => console.log(e));
 
 export async function getAll() {
   try {

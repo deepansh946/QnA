@@ -10,6 +10,12 @@ import getQuestion from "../api/questions/get";
 import getAllQuestion from "../api/questions/getAll";
 import DeleteQuestion from "../api/questions/delete";
 
+import createAnswer from "../api/answers/create";
+import updateAnswer from "../api/answers/update";
+import getAllByAuthorId from "../api/answers/getAllByAuthorId";
+import getAllByQuestionId from "../api/answers/getAllByQuestionId";
+import DeleteAnswer from "../api/answers/delete";
+
 const routes = [];
 
 /**
@@ -17,7 +23,7 @@ const routes = [];
  */
 routes.push({
   method: "POST",
-  path: "/users/{userId}",
+  path: "/users/",
   config: createUser
 });
 
@@ -50,7 +56,7 @@ routes.push({
  */
 routes.push({
   method: "POST",
-  path: "/questions/{questionId}",
+  path: "/questions/",
   config: createQuestion
 });
 
@@ -76,6 +82,39 @@ routes.push({
   method: "DELETE",
   path: "/questions/{questionId}",
   config: DeleteQuestion
+});
+
+/**
+ * Routes of answers
+ */
+routes.push({
+  method: "POST",
+  path: "/answers/",
+  config: createAnswer
+});
+
+routes.push({
+  method: "PUT",
+  path: "/answers/{answerId}",
+  config: updateAnswer
+});
+
+routes.push({
+  method: "GET",
+  path: "/users/{userId}/answers",
+  config: getAllByAuthorId
+});
+
+routes.push({
+  method: "GET",
+  path: "/question/{questionId}",
+  config: getAllByQuestionId
+});
+
+routes.push({
+  method: "DELETE",
+  path: "/answers/{answerId}",
+  config: DeleteAnswer
 });
 
 export default routes;

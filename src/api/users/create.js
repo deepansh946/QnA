@@ -7,9 +7,6 @@ export default {
   description: "Create a new user",
   notes: "It will create a new user",
   validate: {
-    params: Joi.object({
-      userId: Joi.string().required()
-    }),
     payload: Joi.object({
       fullName: Joi.string().required(),
       email: Joi.string().required(),
@@ -18,11 +15,9 @@ export default {
   },
   async handler(request, reply) {
     try {
-      const { userId } = request.params;
       const { fullName, email, password } = request.payload;
 
       const res = await create({
-        userId,
         fullName,
         email,
         password

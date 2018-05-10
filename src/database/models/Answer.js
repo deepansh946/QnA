@@ -12,7 +12,16 @@ const answerSchema = new schema({
   timestamp: {
     type: Date,
     required: true,
-    unique: true
+    unique: true,
+    default: Date.now()
+  },
+  authorId: {
+    type: String,
+    required: true
+  },
+  questionId: {
+    type: String,
+    required: true
   }
 });
 
